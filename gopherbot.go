@@ -9,11 +9,11 @@ import (
 
 const max = 10
 
-// Visor controls the Gopherbot Visor.
+// Visor controls the Gopherbot Visor Neopixel LED.
 type Visor struct {
-	//ws2812.New(neo)
-	d    *ws2812.Device
-	leds []color.RGBA
+	d   *ws2812.Device
+	LED []color.RGBA
+	rg  bool
 }
 
 // NewVisor returns a new Visor to control Gopherbot Visor.
@@ -21,40 +21,57 @@ func NewVisor() *Visor {
 	// TODO: point to the visor's neopixels
 	neo := machine.GPIO{machine.NEOPIXELS}
 	neo.Configure(machine.GPIOConfig{Mode: machine.GPIO_OUTPUT})
+	v := ws2812.New(neo)
 
 	return &Visor{
-		d: ws2812.New(neo),
-		leds: make([]color.RGBA, max)
+		d:   &v,
+		LED: make([]color.RGBA, max),
 	}
+}
+
+// Show sets the visor to display the current LED array state.
+func (v *Visor) Show() {
+	v.d.WriteColors(v.LED)
+}
+
+// Clear clears the visor.
+func (v *Visor) Clear() {
+	for i := range v.leds {
+		v.LED[i] = color.RGBA{R: 0x00, G: 0x00, B: 0x00}
+	}
+
+	v.Show()
 }
 
 // Red turns all of the Visor LEDs red.
 func (v *Visor) Red() {
-	for i := range leds {
-		v.leds[i] = color.RGBA{R: 0xff, G: 0x00, B: 0x00}
+	for i := range v.leds {
+		v.LED[i] = color.RGBA{R: 0xff, G: 0x00, B: 0x00}
 	}
 
-	v.d.WriteColors(leds)
+	v.Show()
 }
 
-// func green() {
-// 	for i := range leds {
-// 		leds[i] = color.RGBA{R: 0x00, G: 0xff, B: 0x00, A: 0x77}
-// 	}
+// Green turns all of the Visor LEDs green.
+func (v *Visor) Green() {
+	for i := range v.LED {
+		v.LED[i] = color.RGBA{R: 0x00, G: 0xff, B: 0x00}
+	}
 
-// 	visor.WriteColors(leds)
-// }
+	v.Show()
+}
 
-// func xmas() {
-// 	rg = !rg
-// 	for i := range leds {
-// 		rg = !rg
-// 		if rg {
-// 			leds[i] = color.RGBA{R: 0xff, G: 0x00, B: 0x00, A: 0x77}
-// 		} else {
-// 			leds[i] = color.RGBA{R: 0x00, G: 0xff, B: 0x00, A: 0x77}
-// 		}
-// 	}
+// Xmas light style
+func (v *Visor) Xmas() {
+	v.rg = !v.rg
+	for i := range v.LED {
+		v.rg = !v.rg
+		if v.rg {
+			v.LED[i] = color.RGBA{R: 0xff, G: 0x00, B: 0x00}
+		} else {
+			v.LED[i] = color.RGBA{R: 0x00, G: 0xff, B: 0x00}
+		}
+	}
 
-// 	visor.WriteColors(leds)
-// }
+	v.Show()
+}
