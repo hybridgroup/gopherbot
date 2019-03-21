@@ -9,15 +9,17 @@ import (
 
 // Visor controls the Gopherbot Visor Neopixel LED.
 type Visor struct {
-	d   *ws2812.Device
-	LED []color.RGBA
-	rg  bool
+	d       *ws2812.Device
+	LED     []color.RGBA
+	rg      bool
+	forward bool
+	pos     int
 }
 
 // NewVisor returns a new Visor to control Gopherbot Visor.
 func NewVisor() *Visor {
 	// TODO: point to the visor's neopixels
-	neo := machine.GPIO{machine.NEOPIXELS}
+	neo := machine.GPIO{machine.A3}
 	neo.Configure(machine.GPIOConfig{Mode: machine.GPIO_OUTPUT})
 	v := ws2812.New(neo)
 
@@ -70,6 +72,38 @@ func (v *Visor) Xmas() {
 			v.LED[i] = color.RGBA{R: 0x00, G: 0xff, B: 0x00}
 		}
 	}
+
+	v.Show()
+}
+
+// Cylon visor mode.
+func (v *Visor) Cylon() {
+	if v.forward {
+		v.pos += 2
+		if v.pos >= visorLEDCount {
+			v.pos = visorLEDCount - 2
+			v.forward = false
+		}
+	} else {
+		v.pos -= 2
+		if v.pos < 0 {
+			v.pos = 0
+			v.forward = true
+		}
+	}
+
+	for i := 0; i < visorLEDCount; i += 2 {
+		if i == v.pos {
+			v.LED[i] = color.RGBA{R: 0xff, G: 0x00, B: 0x00}
+			v.LED[i+1] = color.RGBA{R: 0xff, G: 0x00, B: 0x00}
+		} else {
+			v.LED[i] = color.RGBA{R: 0x00, G: 0x00, B: 0x00}
+			v.LED[i+1] = color.RGBA{R: 0x00, G: 0x00, B: 0x00}
+		}
+	}
+
+	// for i := range v.LED {
+	// }
 
 	v.Show()
 }
