@@ -12,7 +12,7 @@ const (
 	greenVisor = iota
 	redVisor
 	cylonVisor
-	// tiltVisor
+	tiltVisor
 	xmasVisor
 )
 
@@ -23,14 +23,22 @@ const (
 
 var (
 	antenna *machine.GPIO
+
+	accel *gopherbot.Accelerometer
+	visor *gopherbot.Visor
+
+	pos = 0
+	dir = 0
 )
 
 func main() {
+	machine.I2C1.Configure(machine.I2CConfig{})
+
 	ant := machine.GPIO{machine.A2}
 	ant.Configure(machine.GPIOConfig{Mode: machine.GPIO_OUTPUT})
 	antenna = &ant
 
-	visor := gopherbot.NewVisor()
+	visor = gopherbot.NewVisor()
 	backpack := gopherbot.NewBackpack()
 
 	left := machine.GPIO{machine.BUTTONA}
@@ -38,6 +46,8 @@ func main() {
 
 	right := machine.GPIO{machine.BUTTONB}
 	right.Configure(machine.GPIOConfig{Mode: machine.GPIO_INPUT_PULLDOWN})
+
+	accel = gopherbot.NewAccelerometer()
 
 	mode := redVisor
 
@@ -61,15 +71,15 @@ func main() {
 		switch mode {
 		case greenVisor:
 			visor.Green()
-			backpack.Clear()
+			backpack.Alternate(color.RGBA{R: 0x00, G: 0xff, B: 0x00}, color.RGBA{R: 0x00, G: 0x00, B: 0xff})
 		case redVisor:
 			visor.Red()
 			backpack.Red()
 		case cylonVisor:
 			visor.Cylon()
 			backpack.Alternate(color.RGBA{R: 0xff, G: 0x00, B: 0x00}, color.RGBA{R: 0x00, G: 0x00, B: 0x00})
-		// case tiltVisor:
-		// 	tilt()
+		case tiltVisor:
+			tilt()
 		case xmasVisor:
 			visor.Xmas()
 			backpack.Xmas()
@@ -86,4 +96,40 @@ func blinker() {
 		antenna.Low()
 		time.Sleep(500 * time.Millisecond)
 	}
+}
+
+func tilt() {
+	x, y, z, _ := accel.ReadAcceleration()
+	println(x, y, z)
+	//println(int64((float64(x) * 9.806)), int64((float64(y) * 9.806)), int64((float64(z) * 9.806)))
+
+	switch {
+	case x < 300000 && x > -300000:
+		switch {
+		case pos <= gopherbot.VisorLEDCount/2-1:
+			pos++
+		case pos >= gopherbot.VisorLEDCount/2+1:
+			pos--
+		}
+	case x > 300000:
+		pos++
+		if pos == gopherbot.VisorLEDCount {
+			pos = gopherbot.VisorLEDCount - 1
+		}
+	case x < -300000:
+		pos--
+		if pos < 0 {
+			pos = 0
+		}
+	}
+
+	for i := range visor.LED {
+		if i == pos {
+			visor.LED[i] = color.RGBA{R: 0x00, G: 0xff, B: 0x00, A: 0x77}
+		} else {
+			visor.LED[i] = color.RGBA{R: 0x00, G: 0x00, B: 0x00, A: 0x77}
+		}
+	}
+
+	visor.Show()
 }

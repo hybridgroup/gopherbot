@@ -25,7 +25,7 @@ func NewVisor() *Visor {
 
 	return &Visor{
 		d:   &v,
-		LED: make([]color.RGBA, visorLEDCount),
+		LED: make([]color.RGBA, VisorLEDCount),
 	}
 }
 
@@ -80,8 +80,8 @@ func (v *Visor) Xmas() {
 func (v *Visor) Cylon() {
 	if v.forward {
 		v.pos += 2
-		if v.pos >= visorLEDCount {
-			v.pos = visorLEDCount - 2
+		if v.pos >= VisorLEDCount {
+			v.pos = VisorLEDCount - 2
 			v.forward = false
 		}
 	} else {
@@ -92,7 +92,7 @@ func (v *Visor) Cylon() {
 		}
 	}
 
-	for i := 0; i < visorLEDCount; i += 2 {
+	for i := 0; i < VisorLEDCount; i += 2 {
 		if i == v.pos {
 			v.LED[i] = color.RGBA{R: 0xff, G: 0x00, B: 0x00}
 			v.LED[i+1] = color.RGBA{R: 0xff, G: 0x00, B: 0x00}

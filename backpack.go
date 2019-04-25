@@ -22,7 +22,7 @@ func NewBackpack() *Backpack {
 
 	return &Backpack{
 		d:   &v,
-		LED: make([]color.RGBA, backpackLEDCount),
+		LED: make([]color.RGBA, BackpackLEDCount),
 	}
 }
 

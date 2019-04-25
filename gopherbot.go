@@ -1,6 +1,6 @@
 package gopherbot
 
 const (
-	backpackLEDCount = 10
-	visorLEDCount    = 14
+	BackpackLEDCount = 10
+	VisorLEDCount    = 14
 )
