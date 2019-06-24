@@ -16,8 +16,8 @@ type Backpack struct {
 
 // NewBackpack returns a new Backpack to control Gopherbot Backpack.
 func NewBackpack() *Backpack {
-	neo := machine.GPIO{machine.NEOPIXELS}
-	neo.Configure(machine.GPIOConfig{Mode: machine.GPIO_OUTPUT})
+	neo := machine.NEOPIXELS
+	neo.Configure(machine.PinConfig{Mode: machine.PinOutput})
 	v := ws2812.New(neo)
 
 	return &Backpack{

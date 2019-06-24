@@ -19,8 +19,8 @@ type Visor struct {
 // NewVisor returns a new Visor to control Gopherbot Visor.
 func NewVisor() *Visor {
 	// TODO: point to the visor's neopixels
-	neo := machine.GPIO{machine.A3}
-	neo.Configure(machine.GPIOConfig{Mode: machine.GPIO_OUTPUT})
+	neo := machine.A3
+	neo.Configure(machine.PinConfig{Mode: machine.PinOutput})
 	v := ws2812.New(neo)
 
 	return &Visor{

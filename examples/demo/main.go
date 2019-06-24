@@ -22,7 +22,7 @@ const (
 )
 
 var (
-	antenna *machine.GPIO
+	antenna *machine.Pin
 
 	accel *gopherbot.Accelerometer
 	visor *gopherbot.Visor
@@ -34,18 +34,18 @@ var (
 func main() {
 	machine.I2C1.Configure(machine.I2CConfig{})
 
-	ant := machine.GPIO{machine.A2}
-	ant.Configure(machine.GPIOConfig{Mode: machine.GPIO_OUTPUT})
+	ant := machine.A2
+	ant.Configure(machine.PinConfig{Mode: machine.PinOutput})
 	antenna = &ant
 
 	visor = gopherbot.NewVisor()
 	backpack := gopherbot.NewBackpack()
 
-	left := machine.GPIO{machine.BUTTONA}
-	left.Configure(machine.GPIOConfig{Mode: machine.GPIO_INPUT_PULLDOWN})
+	left := machine.BUTTONA
+	left.Configure(machine.PinConfig{Mode: machine.PinInputPulldown})
 
-	right := machine.GPIO{machine.BUTTONB}
-	right.Configure(machine.GPIOConfig{Mode: machine.GPIO_INPUT_PULLDOWN})
+	right := machine.BUTTONB
+	right.Configure(machine.PinConfig{Mode: machine.PinInputPulldown})
 
 	accel = gopherbot.NewAccelerometer()
 
