@@ -53,7 +53,7 @@ The Circuit Playground Express comes with the [UF2 bootloader](https://github.co
 - The Circuit Playground Express board will appear to your computer like a USB drive. Determine the path to the board, for example on Linux it will be something like `/media/[USERNAME]/[NAME OF THE BOARD]`.
 - Build your TinyGo program to the board in `.uf2` format using this command:
 
-```
+```shell
 tinygo build -size short -o /media/yourname/CPLAYBOOT/flash.uf2 -target=circuitplay-express examples/blinky1
 ```
 
@@ -64,6 +64,14 @@ Now you are ready to try something more flashy.
 - Once again, press the "RESET" button on the board two times to get the Circuit Playground Express board ready to receive code.
 - Build the demo TinyGo program to the board in format using this command:
 
+```shell
+tinygo build -size short -o /media/yourname/CPLAYBOOT/flash.uf2 -target=circuitplay-express ./examples/blink/main.go
 ```
-tinygo build -size short -o /media/yourname/CPLAYBOOT/flash.uf2 -target=circuitplay-express ./examples/demo/main.go
-```
+
+Now THAT is a blink!
+
+## What To Do Next?
+
+If you want to load one of the example programs on Gopherbot, check out our [examples](./examples/README.md).
+
+For a series of programming activities to learn TinyGo using Gopherbot, check out the [learn folder](./learn/README.md).
