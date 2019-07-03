@@ -3,7 +3,7 @@ package gopherbot
 import (
 	"machine"
 
-	"github.com/tinygo-org/drivers/lis3dh"
+	"tinygo.org/x/drivers/lis3dh"
 )
 
 // Accelerometer controls the Gopherbot built-in LIS3DH.

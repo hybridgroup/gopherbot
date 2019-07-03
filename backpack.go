@@ -4,7 +4,7 @@ import (
 	"image/color"
 	"machine"
 
-	"github.com/tinygo-org/drivers/ws2812"
+	"tinygo.org/x/drivers/ws2812"
 )
 
 // Backpack controls the Gopherbot Backpack LED.

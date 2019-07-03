@@ -4,7 +4,7 @@ import (
 	"image/color"
 	"machine"
 
-	"github.com/tinygo-org/drivers/ws2812"
+	"tinygo.org/x/drivers/ws2812"
 )
 
 // Visor controls the Gopherbot Visor Neopixel LED.
