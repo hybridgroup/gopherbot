@@ -26,11 +26,10 @@ https://tinygo.org/getting-started/
 
 ### TinyGo drivers
 
-To install the various drivers and other code dependencies run these commands:
+To install the various drivers and other code dependencies run this command:
 
 ```
 go get -u tinygo.org/x/drivers
-go get -u github.com/eclipse/paho.mqtt.golang
 ```
 
 ### TinyGo drivers
@@ -59,7 +58,7 @@ tinygo build -size short -o /media/yourname/CPLAYBOOT/flash.uf2 -target=circuitp
 
 - The Circuit Playground Express board should restart and then begin running your program. This program just causes the small LED labelled "D13" on the Circuit Playground Express board to start blinking on and off.
 
-Now you are ready to try something more flashy.
+Now you are ready to try something a little more flashy.
 
 - Once again, press the "RESET" button on the board two times to get the Circuit Playground Express board ready to receive code.
 - Build the demo TinyGo program to the board in format using this command:
