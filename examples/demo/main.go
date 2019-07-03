@@ -22,10 +22,9 @@ const (
 )
 
 var (
-	antenna *machine.Pin
-
-	accel *gopherbot.Accelerometer
-	visor *gopherbot.Visor
+	antenna *gopherbot.Antenna
+	accel   *gopherbot.Accelerometer
+	visor   *gopherbot.Visor
 
 	pos = 0
 	dir = 0
@@ -34,10 +33,7 @@ var (
 func main() {
 	machine.I2C1.Configure(machine.I2CConfig{})
 
-	ant := machine.A2
-	ant.Configure(machine.PinConfig{Mode: machine.PinOutput})
-	antenna = &ant
-
+	antenna = gopherbot.NewAntenna()
 	visor = gopherbot.NewVisor()
 	backpack := gopherbot.NewBackpack()
 
@@ -51,7 +47,7 @@ func main() {
 
 	mode := redVisor
 
-	go blinker()
+	go antenna.Blink()
 
 	for {
 		if !right.Get() {
@@ -89,14 +85,14 @@ func main() {
 	}
 }
 
-func blinker() {
-	for {
-		antenna.High()
-		time.Sleep(500 * time.Millisecond)
-		antenna.Low()
-		time.Sleep(500 * time.Millisecond)
-	}
-}
+// func blinker() {
+// 	for {
+// 		antenna.High()
+// 		time.Sleep(500 * time.Millisecond)
+// 		antenna.Low()
+// 		time.Sleep(500 * time.Millisecond)
+// 	}
+// }
 
 func tilt() {
 	x, y, z, _ := accel.ReadAcceleration()
