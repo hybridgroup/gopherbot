@@ -1,19 +1,19 @@
 package main
 
 import (
+	"machine"
 	"time"
-
-	"github.com/hybridgroup/gopherbot"
 )
 
 func main() {
-	visor := gopherbot.NewVisor()
+	antenna := machine.A2
+	antenna.Configure(machine.PinConfig{Mode: machine.PinOutput})
 
 	for {
-		visor.Green()
+		antenna.High()
 		time.Sleep(time.Millisecond * 500)
 
-		visor.Clear()
+		antenna.Low()
 		time.Sleep(time.Millisecond * 500)
 	}
 }
