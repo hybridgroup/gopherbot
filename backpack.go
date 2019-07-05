@@ -9,9 +9,9 @@ import (
 
 // Backpack controls the Gopherbot Backpack LED.
 type Backpack struct {
-	d   *ws2812.Device
-	LED []color.RGBA
-	alt bool
+	Device *ws2812.Device
+	LED    []color.RGBA
+	alt    bool
 }
 
 // NewBackpack returns a new Backpack to control Gopherbot Backpack.
@@ -21,14 +21,14 @@ func NewBackpack() *Backpack {
 	v := ws2812.New(neo)
 
 	return &Backpack{
-		d:   &v,
-		LED: make([]color.RGBA, BackpackLEDCount),
+		Device: &v,
+		LED:    make([]color.RGBA, BackpackLEDCount),
 	}
 }
 
 // Show sets the Backpack to display the current LED array state.
 func (b *Backpack) Show() {
-	b.d.WriteColors(b.LED)
+	b.Device.WriteColors(b.LED)
 }
 
 // // SetColors sets the Backpack colors to the new array

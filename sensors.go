@@ -8,7 +8,7 @@ import (
 
 // Accelerometer controls the Gopherbot built-in LIS3DH.
 type Accelerometer struct {
-	d *lis3dh.Device
+	Device *lis3dh.Device
 }
 
 // NewAccelerometer returns a new Accelerometer.
@@ -19,12 +19,12 @@ func NewAccelerometer() *Accelerometer {
 	accel.SetRange(lis3dh.RANGE_2_G)
 
 	return &Accelerometer{
-		d: &accel,
+		Device: &accel,
 	}
 }
 
 // ReadAcceleration returns the adjusted x, y and z axis in milli-Gs.
 func (a *Accelerometer) ReadAcceleration() (x int32, y int32, z int32, err error) {
-	x, y, z, err = a.d.ReadAcceleration()
+	x, y, z, err = a.Device.ReadAcceleration()
 	return
 }

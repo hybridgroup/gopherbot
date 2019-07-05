@@ -9,7 +9,7 @@ import (
 
 // Visor controls the Gopherbot Visor Neopixel LED.
 type Visor struct {
-	d       *ws2812.Device
+	Device  *ws2812.Device
 	LED     []color.RGBA
 	rg      bool
 	forward bool
@@ -24,14 +24,14 @@ func NewVisor() *Visor {
 	v := ws2812.New(neo)
 
 	return &Visor{
-		d:   &v,
-		LED: make([]color.RGBA, VisorLEDCount),
+		Device: &v,
+		LED:    make([]color.RGBA, VisorLEDCount),
 	}
 }
 
 // Show sets the visor to display the current LED array state.
 func (v *Visor) Show() {
-	v.d.WriteColors(v.LED)
+	v.Device.WriteColors(v.LED)
 }
 
 // Clear clears the visor.
@@ -101,9 +101,6 @@ func (v *Visor) Cylon() {
 			v.LED[i+1] = color.RGBA{R: 0x00, G: 0x00, B: 0x00}
 		}
 	}
-
-	// for i := range v.LED {
-	// }
 
 	v.Show()
 }
