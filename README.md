@@ -45,7 +45,9 @@ OK great, we're ready to write our first TinyGo program and put it on Gopherbot.
 
 ## Hello, Gopherbot
 
-The Circuit Playground Express comes with the [UF2 bootloader](https://github.com/Microsoft/uf2) already installed.
+Gopherbot uses an [Adafruit Circuit Playground Express](https://www.adafruit.com/product/3333) as its "brain". To put new code on the Circuit Playground Express you just copy a file in the correct format from your computer using a USB connection without having to install any extra software. This is because it comes with a "bootloader" calld UF2 already installed that lets to do the flashing. Here is more information about the [UF2 bootloader](https://github.com/Microsoft/uf2) if you are interested.
+
+Here is all you have to do:
 
 - Plug your Circuit Playground Express into your computer's USB port.
 - Press the "RESET" button on the board two times to get the Circuit Playground Express board ready to receive code. You have to do this every time you want to put new code on to the board.
