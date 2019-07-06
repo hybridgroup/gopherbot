@@ -1,6 +1,6 @@
 # Gopherbot
 
-Gopherbot is a robot gopher plushie that is programmable using TinyGo ((https://tinygo.org)[https://tinygo.org]).
+Gopherbot is a robot gopher plushie that is programmable using TinyGo (https://tinygo.org)
 
 Uses an [Adafruit Circuit Playground Express](https://www.adafruit.com/product/3333) with a 3D printed helmet and backpack.
 
@@ -47,7 +47,7 @@ OK great, we're ready to write our first TinyGo program and put it on Gopherbot.
 
 ## Hello, Gopherbot
 
-Gopherbot uses an [Adafruit Circuit Playground Express](https://www.adafruit.com/product/3333) as its "brain". To put new code on the Circuit Playground Express you just copy a file in the correct format from your computer using a USB connection without having to install any extra flashing software. This is because it comes with a "bootloader" named UF2 already installed, that lets to do the flashing. Here is more information about the [UF2 bootloader](https://github.com/Microsoft/uf2) if you are interested.
+Gopherbot uses an [Adafruit Circuit Playground Express](https://www.adafruit.com/product/3333) as its "brain". To put new code on the Circuit Playground Express you can copy a file in the correct format from your computer to the board using a USB connection without having to install any extra flashing software. This is because it comes with a "bootloader" named UF2 already installed, that lets to do the flashing. Here is more information about the [UF2 bootloader](https://github.com/Microsoft/uf2) if you are interested.
 
 Here is what to do:
 
