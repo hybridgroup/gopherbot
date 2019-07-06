@@ -7,35 +7,34 @@ import (
 	"tinygo.org/x/drivers/ws2812"
 )
 
-// Visor controls the Gopherbot Visor Neopixel LED.
-type Visor struct {
-	Device  *ws2812.Device
+// VisorDevice controls the Gopherbot Visor Neopixel LED.
+type VisorDevice struct {
+	ws2812.Device
 	LED     []color.RGBA
 	rg      bool
 	forward bool
 	pos     int
 }
 
-// NewVisor returns a new Visor to control Gopherbot Visor.
-func NewVisor() *Visor {
-	// TODO: point to the visor's neopixels
+// Visor returns a new VisorDevice to control Gopherbot Visor.
+func Visor() *VisorDevice {
 	neo := machine.A3
 	neo.Configure(machine.PinConfig{Mode: machine.PinOutput})
 	v := ws2812.New(neo)
 
-	return &Visor{
-		Device: &v,
+	return &VisorDevice{
+		Device: v,
 		LED:    make([]color.RGBA, VisorLEDCount),
 	}
 }
 
 // Show sets the visor to display the current LED array state.
-func (v *Visor) Show() {
-	v.Device.WriteColors(v.LED)
+func (v *VisorDevice) Show() {
+	v.WriteColors(v.LED)
 }
 
 // Clear clears the visor.
-func (v *Visor) Clear() {
+func (v *VisorDevice) Clear() {
 	for i := range v.LED {
 		v.LED[i] = color.RGBA{R: 0x00, G: 0x00, B: 0x00}
 	}
@@ -44,7 +43,7 @@ func (v *Visor) Clear() {
 }
 
 // Red turns all of the Visor LEDs red.
-func (v *Visor) Red() {
+func (v *VisorDevice) Red() {
 	for i := range v.LED {
 		v.LED[i] = color.RGBA{R: 0xff, G: 0x00, B: 0x00}
 	}
@@ -53,7 +52,7 @@ func (v *Visor) Red() {
 }
 
 // Green turns all of the Visor LEDs green.
-func (v *Visor) Green() {
+func (v *VisorDevice) Green() {
 	for i := range v.LED {
 		v.LED[i] = color.RGBA{R: 0x00, G: 0xff, B: 0x00}
 	}
@@ -62,7 +61,7 @@ func (v *Visor) Green() {
 }
 
 // Xmas light style
-func (v *Visor) Xmas() {
+func (v *VisorDevice) Xmas() {
 	v.rg = !v.rg
 	for i := range v.LED {
 		v.rg = !v.rg
@@ -77,7 +76,7 @@ func (v *Visor) Xmas() {
 }
 
 // Cylon visor mode.
-func (v *Visor) Cylon() {
+func (v *VisorDevice) Cylon() {
 	if v.forward {
 		v.pos += 2
 		if v.pos >= VisorLEDCount {

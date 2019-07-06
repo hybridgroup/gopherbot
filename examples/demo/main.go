@@ -21,36 +21,36 @@ const (
 )
 
 var (
-	antenna *gopherbot.Antenna
-	accel   *gopherbot.Accelerometer
-	visor   *gopherbot.Visor
+	antenna *gopherbot.AntennaDevice
+	accel   *gopherbot.AccelerometerDevice
+	visor   *gopherbot.VisorDevice
 
 	pos = 0
 )
 
 func main() {
-	antenna = gopherbot.NewAntenna()
-	visor = gopherbot.NewVisor()
-	backpack := gopherbot.NewBackpack()
+	antenna = gopherbot.Antenna()
+	visor = gopherbot.Visor()
+	backpack := gopherbot.Backpack()
 
-	left := gopherbot.NewLeftButton()
-	right := gopherbot.NewRightButton()
+	left := gopherbot.LeftButton()
+	right := gopherbot.RightButton()
 
-	accel = gopherbot.NewAccelerometer()
+	accel = gopherbot.Accelerometer()
 
 	mode := redVisor
 
 	go antenna.Blink()
 
 	for {
-		if !right.Get() {
+		if right.Pushed() {
 			mode++
 			if mode > xmasVisor {
 				mode = greenVisor
 			}
 		}
 
-		if !left.Get() {
+		if left.Pushed() {
 			mode--
 			if mode < greenVisor {
 				mode = xmasVisor

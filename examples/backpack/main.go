@@ -20,9 +20,9 @@ const (
 )
 
 func main() {
-	backpack := gopherbot.NewBackpack()
-	left := gopherbot.NewLeftButton()
-	right := gopherbot.NewRightButton()
+	backpack := gopherbot.Backpack()
+	left := gopherbot.LeftButton()
+	right := gopherbot.RightButton()
 
 	mode := redJet
 

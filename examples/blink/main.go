@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	antenna := gopherbot.NewAntenna()
+	antenna := gopherbot.Antenna()
 
 	for {
 		antenna.On()

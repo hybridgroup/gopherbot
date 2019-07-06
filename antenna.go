@@ -5,35 +5,35 @@ import (
 	"time"
 )
 
-// Antenna controls the LED of the Gopherbot Helmet's antenna.
-type Antenna struct {
-	LED   *machine.Pin
+// AntennaDevice controls the LED of the Gopherbot Helmet's antenna.
+type AntennaDevice struct {
+	machine.Pin
 	Speed time.Duration
 }
 
-// NewAntenna returns a new Antenna to control the Gopherbot Antenna LED.
-func NewAntenna() *Antenna {
+// Antenna returns a the Antenna to control the Gopherbot Antenna LED.
+func Antenna() *AntennaDevice {
 	led := machine.A2
 	led.Configure(machine.PinConfig{Mode: machine.PinOutput})
 
-	return &Antenna{
-		LED:   &led,
+	return &AntennaDevice{
+		Pin:   led,
 		Speed: 500 * time.Millisecond,
 	}
 }
 
 // On turns on the Antenna LED.
-func (a *Antenna) On() {
-	a.LED.High()
+func (a *AntennaDevice) On() {
+	a.High()
 }
 
 // Off turns off the Antenna LED.
-func (a *Antenna) Off() {
-	a.LED.Low()
+func (a *AntennaDevice) Off() {
+	a.Low()
 }
 
 // Blink starts the antenna blinking repeatedly.
-func (a *Antenna) Blink() {
+func (a *AntennaDevice) Blink() {
 	for {
 		a.On()
 		time.Sleep(a.Speed)

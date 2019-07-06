@@ -19,10 +19,10 @@ const (
 )
 
 func main() {
-	visor := gopherbot.NewVisor()
+	visor := gopherbot.Visor()
 
-	left := gopherbot.NewLeftButton()
-	right := gopherbot.NewRightButton()
+	left := gopherbot.LeftButton()
+	right := gopherbot.RightButton()
 
 	mode := redVisor
 
