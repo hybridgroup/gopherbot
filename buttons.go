@@ -11,7 +11,7 @@ type ButtonDevice struct {
 
 // Pushed checks to see if the button is being pushed.
 func (b *ButtonDevice) Pushed() bool {
-	return !b.Get()
+	return b.Get()
 }
 
 // LeftButton returns the left ButtonDevice.
