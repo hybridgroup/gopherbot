@@ -1,7 +1,6 @@
 package main
 
 import (
-	"machine"
 	"time"
 
 	"github.com/hybridgroup/gopherbot"
@@ -11,7 +10,6 @@ const (
 	greenVisor = iota
 	redVisor
 	cylonVisor
-	// tiltVisor
 	xmasVisor
 )
 
@@ -23,11 +21,8 @@ const (
 func main() {
 	visor := gopherbot.NewVisor()
 
-	left := machine.BUTTONA
-	left.Configure(machine.PinConfig{Mode: machine.PinInputPulldown})
-
-	right := machine.BUTTONB
-	right.Configure(machine.PinConfig{Mode: machine.PinInputPulldown})
+	left := gopherbot.NewLeftButton()
+	right := gopherbot.NewRightButton()
 
 	mode := redVisor
 
@@ -53,8 +48,6 @@ func main() {
 			visor.Red()
 		case cylonVisor:
 			visor.Cylon()
-		// case tiltVisor:
-		// 	tilt()
 		case xmasVisor:
 			visor.Xmas()
 		}

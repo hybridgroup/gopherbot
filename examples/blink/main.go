@@ -1,19 +1,19 @@
 package main
 
 import (
-	"machine"
 	"time"
+
+	"github.com/hybridgroup/gopherbot"
 )
 
 func main() {
-	antenna := machine.A2
-	antenna.Configure(machine.PinConfig{Mode: machine.PinOutput})
+	antenna := gopherbot.NewAntenna()
 
 	for {
-		antenna.High()
-		time.Sleep(time.Millisecond * 500)
+		antenna.On()
+		time.Sleep(500 * time.Millisecond)
 
-		antenna.Low()
-		time.Sleep(time.Millisecond * 500)
+		antenna.Off()
+		time.Sleep(500 * time.Millisecond)
 	}
 }

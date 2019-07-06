@@ -31,11 +31,6 @@ func (b *Backpack) Show() {
 	b.Device.WriteColors(b.LED)
 }
 
-// // SetColors sets the Backpack colors to the new array
-// func (b *Backpack) SetColors(colors []color.RGBA) {
-// 	copy(b.LED, colors)
-// }
-
 // Clear clears the Backpack LEDs.
 func (b *Backpack) Clear() {
 	b.SetColor(color.RGBA{R: 0x00, G: 0x00, B: 0x00})

@@ -2,7 +2,6 @@ package main
 
 import (
 	"image/color"
-	"machine"
 	"time"
 
 	"github.com/hybridgroup/gopherbot"
@@ -27,21 +26,15 @@ var (
 	visor   *gopherbot.Visor
 
 	pos = 0
-	dir = 0
 )
 
 func main() {
-	machine.I2C1.Configure(machine.I2CConfig{})
-
 	antenna = gopherbot.NewAntenna()
 	visor = gopherbot.NewVisor()
 	backpack := gopherbot.NewBackpack()
 
-	left := machine.BUTTONA
-	left.Configure(machine.PinConfig{Mode: machine.PinInputPulldown})
-
-	right := machine.BUTTONB
-	right.Configure(machine.PinConfig{Mode: machine.PinInputPulldown})
+	left := gopherbot.NewLeftButton()
+	right := gopherbot.NewRightButton()
 
 	accel = gopherbot.NewAccelerometer()
 
@@ -85,19 +78,9 @@ func main() {
 	}
 }
 
-// func blinker() {
-// 	for {
-// 		antenna.High()
-// 		time.Sleep(500 * time.Millisecond)
-// 		antenna.Low()
-// 		time.Sleep(500 * time.Millisecond)
-// 	}
-// }
-
 func tilt() {
 	x, y, z, _ := accel.ReadAcceleration()
 	println(x, y, z)
-	//println(int64((float64(x) * 9.806)), int64((float64(y) * 9.806)), int64((float64(z) * 9.806)))
 
 	switch {
 	case x < 300000 && x > -300000:
