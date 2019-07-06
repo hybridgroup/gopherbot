@@ -21,7 +21,6 @@ const (
 )
 
 var (
-	antenna *gopherbot.AntennaDevice
 	accel   *gopherbot.AccelerometerDevice
 	visor   *gopherbot.VisorDevice
 	speaker *gopherbot.SpeakerDevice
@@ -31,10 +30,10 @@ var (
 
 func main() {
 	accel = gopherbot.Accelerometer()
-	antenna = gopherbot.Antenna()
 	visor = gopherbot.Visor()
 	speaker = gopherbot.Speaker()
 
+	antenna := gopherbot.Antenna()
 	backpack := gopherbot.Backpack()
 
 	left := gopherbot.LeftButton()
