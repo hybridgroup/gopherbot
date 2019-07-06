@@ -16,6 +16,7 @@ import (
 )
 
 func main() {
+	led := gopherbot.LED()
 	antenna := gopherbot.Antenna()
 	visor := gopherbot.Visor()
 	backpack := gopherbot.Backpack()
@@ -24,11 +25,13 @@ func main() {
 
 	for {
 		if slider.IsOn() {
+			led.On()
 			antenna.On()
 			visor.Blue()
 			backpack.Blue()
 			time.Sleep(500 * time.Millisecond)
 
+			led.Off()
 			antenna.Off()
 			visor.Off()
 			backpack.Off()
