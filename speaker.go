@@ -26,12 +26,15 @@ func Speaker() *SpeakerDevice {
 
 // Bleep makes a bleep sound using the speaker.
 func (s *SpeakerDevice) Bleep() {
-	// do bleep
 	s.Tone(buzzer.C3, buzzer.Eighth)
 }
 
 // Bloop makes a bloop sound using the speaker.
 func (s *SpeakerDevice) Bloop() {
-	// do bloop
 	s.Tone(buzzer.C5, buzzer.Quarter)
+}
+
+// Blip makes a blip sound using the speaker.
+func (s *SpeakerDevice) Blip() {
+	s.Tone(buzzer.C6, buzzer.Eighth/8)
 }
