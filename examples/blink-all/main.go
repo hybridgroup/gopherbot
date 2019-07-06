@@ -11,15 +11,19 @@ func main() {
 	visor := gopherbot.Visor()
 	backpack := gopherbot.Backpack()
 
-	for {
-		antenna.On()
-		visor.Blue()
-		backpack.Blue()
-		time.Sleep(500 * time.Millisecond)
+	slider := gopherbot.Slider()
 
-		antenna.Off()
-		visor.Clear()
-		backpack.Clear()
-		time.Sleep(500 * time.Millisecond)
+	for {
+		if slider.IsOn() {
+			antenna.On()
+			visor.Blue()
+			backpack.Blue()
+			time.Sleep(500 * time.Millisecond)
+
+			antenna.Off()
+			visor.Clear()
+			backpack.Clear()
+			time.Sleep(500 * time.Millisecond)
+		}
 	}
 }
