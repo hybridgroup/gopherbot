@@ -24,19 +24,21 @@ var (
 	antenna *gopherbot.AntennaDevice
 	accel   *gopherbot.AccelerometerDevice
 	visor   *gopherbot.VisorDevice
+	speaker *gopherbot.SpeakerDevice
 
 	pos = 0
 )
 
 func main() {
+	accel = gopherbot.Accelerometer()
 	antenna = gopherbot.Antenna()
 	visor = gopherbot.Visor()
+	speaker = gopherbot.Speaker()
+
 	backpack := gopherbot.Backpack()
 
 	left := gopherbot.LeftButton()
 	right := gopherbot.RightButton()
-
-	accel = gopherbot.Accelerometer()
 
 	mode := redVisor
 
@@ -94,11 +96,13 @@ func tilt() {
 		pos++
 		if pos == gopherbot.VisorLEDCount {
 			pos = gopherbot.VisorLEDCount - 1
+			speaker.Bleep()
 		}
 	case x < -300000:
 		pos--
 		if pos < 0 {
 			pos = 0
+			speaker.Bleep()
 		}
 	}
 
