@@ -34,7 +34,7 @@ To install the various drivers and other code dependencies run this command:
 go get -u tinygo.org/x/drivers
 ```
 
-### TinyGo drivers
+### Gopherbot code
 
 Lastly, get the code from this repository:
 
