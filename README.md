@@ -4,6 +4,36 @@ Gopherbot is a robot gopher plushie that is programmable using TinyGo (https://t
 
 Uses an [Adafruit Circuit Playground Express](https://www.adafruit.com/product/3333) with a 3D printed helmet and backpack.
 
+Here is a TinyGo program that blinks all of the various built-in LEDs all at the same time!
+
+```go
+package main
+
+import (
+	"time"
+
+	"github.com/hybridgroup/gopherbot"
+)
+
+func main() {
+	antenna := gopherbot.Antenna()
+	visor := gopherbot.Visor()
+	backpack := gopherbot.Backpack()
+
+	for {
+		antenna.On()
+		visor.Blue()
+		backpack.Blue()
+		time.Sleep(500 * time.Millisecond)
+
+		antenna.Off()
+		visor.Clear()
+		backpack.Clear()
+		time.Sleep(500 * time.Millisecond)
+	}
+}
+```
+
 ## Assembling Your Kit
 
 Did you receive a Gopherbot kit? Awesome! For assembly instructions, go here:
