@@ -27,14 +27,14 @@ func main() {
 	mode := redVisor
 
 	for {
-		if !right.Get() {
+		if right.Pushed() {
 			mode++
 			if mode > xmasVisor {
 				mode = greenVisor
 			}
 		}
 
-		if !left.Get() {
+		if left.Pushed() {
 			mode--
 			if mode < greenVisor {
 				mode = xmasVisor
