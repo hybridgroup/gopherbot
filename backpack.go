@@ -31,6 +31,11 @@ func (b *BackpackDevice) Show() {
 	b.WriteColors(b.LED)
 }
 
+// Off turns off all the LEDs.
+func (b *BackpackDevice) Off() {
+	b.Clear()
+}
+
 // Clear clears the Backpack LEDs.
 func (b *BackpackDevice) Clear() {
 	b.SetColor(color.RGBA{R: 0x00, G: 0x00, B: 0x00})

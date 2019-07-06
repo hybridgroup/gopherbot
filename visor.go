@@ -33,6 +33,11 @@ func (v *VisorDevice) Show() {
 	v.WriteColors(v.LED)
 }
 
+// Off turns off all the LEDs.
+func (v *VisorDevice) Off() {
+	v.Clear()
+}
+
 // Clear clears the visor.
 func (v *VisorDevice) Clear() {
 	for i := range v.LED {

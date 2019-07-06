@@ -21,8 +21,8 @@ func main() {
 			time.Sleep(500 * time.Millisecond)
 
 			antenna.Off()
-			visor.Clear()
-			backpack.Clear()
+			visor.Off()
+			backpack.Off()
 			time.Sleep(500 * time.Millisecond)
 		}
 	}
