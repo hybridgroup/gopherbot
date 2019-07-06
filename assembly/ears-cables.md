@@ -1,4 +1,4 @@
-### Helmet - Ears and cables
+# Helmet - Ears and cables
 
 Attach the ears, and then tie wrap the cables neatly to the helmet.
 
@@ -9,3 +9,7 @@ Attach the ears, and then tie wrap the cables neatly to the helmet.
 ## Use tie wraps to secure ribbon cable
 
 ## Next steps
+
+Now it is time to assemble the 3D printed backpack.
+
+Here are the [backpack assembly instructions](.backpack.md).

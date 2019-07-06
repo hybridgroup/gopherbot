@@ -28,4 +28,6 @@ TODO: how to connect wires to ribbon cable.
 
 ## Next step
 
-Now you are ready to proceed to 
+Now you are ready to proceed to attach the ears, and then tie wrap the cables neatly to the helmet.
+
+Here are the [ears and cables assembly instructions](./ears-cables.md).

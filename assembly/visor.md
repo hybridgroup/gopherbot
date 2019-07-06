@@ -46,4 +46,6 @@ Route the wires around the inside of the helmet, but do not attach them to anyth
 
 ## Next step
 
-Now you are ready to proceed to 
+Now that the visor is installed, it is time to attach the antenna to the helmet.
+
+Here are the [antenna assembly instructions](./antenna.md).

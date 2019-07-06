@@ -15,3 +15,7 @@ Now it is time to assemble the 3D printed backpack.
 ## Cut battery straps
 
 ## Tie on USB battery
+
+## Next steps
+
+You should now be ready to put the helmet and backpack on your plushie.

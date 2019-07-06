@@ -47,6 +47,6 @@ Here are the [backpack assembly instructions](.backpack.md).
 
 You should now be ready to put the helmet and backpack on your plushie.
 
-### What now?
+### Next steps
 
 Now that your Gopherbot is fully assembled, go back to the main README and continue with the software installation on your computer so you can write yur own programs.
