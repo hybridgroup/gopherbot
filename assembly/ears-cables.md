@@ -12,4 +12,4 @@ Attach the ears, and then tie wrap the cables neatly to the helmet.
 
 Now it is time to assemble the 3D printed backpack.
 
-Here are the [backpack assembly instructions](.backpack.md).
+Here are the [backpack assembly instructions](./backpack.md).
