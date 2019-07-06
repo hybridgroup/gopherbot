@@ -55,6 +55,11 @@ func (b *BackpackDevice) Green() {
 	b.SetColor(color.RGBA{R: 0x00, G: 0xff, B: 0x00})
 }
 
+// Blue turns all of the Backpack LEDs b;ue.
+func (b *BackpackDevice) Blue() {
+	b.SetColor(color.RGBA{R: 0x00, G: 0x00, B: 0xff})
+}
+
 // Xmas light style that rotates
 func (b *BackpackDevice) Xmas() {
 	b.Alternate(color.RGBA{R: 0xff, G: 0x00, B: 0x00}, color.RGBA{R: 0x00, G: 0xff, B: 0x00})
