@@ -16,7 +16,7 @@ import (
 )
 
 func main() {
-	led := gopherbot.LED()
+	led := gopherbot.StatusLED()
 	antenna := gopherbot.Antenna()
 	visor := gopherbot.Visor()
 	backpack := gopherbot.Backpack()
