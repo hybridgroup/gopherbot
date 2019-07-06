@@ -1,14 +1,16 @@
 # Gopherbot
 
-A programmable robot gopher plushie.
+Gopherbot is a robot gopher plushie that is programmable using TinyGo ((https://tinygo.org)[https://tinygo.org]).
+
+Uses an [Adafruit Circuit Playground Express](https://www.adafruit.com/product/3333) with a 3D printed helmet and backpack.
 
 ## Assembling Your Kit
 
 Did you receive a Gopherbot kit? Awesome! For assembly instructions, go here:
 
-[Assembly Instructions](./assembly/README.md)
+[Gopherbot Assembly Instructions](./assembly/README.md)
 
-## Putting code on Gopherbot
+## Installation
 
 To put code on Gopherbot, you need to install some software on your own machine.
 
@@ -45,9 +47,9 @@ OK great, we're ready to write our first TinyGo program and put it on Gopherbot.
 
 ## Hello, Gopherbot
 
-Gopherbot uses an [Adafruit Circuit Playground Express](https://www.adafruit.com/product/3333) as its "brain". To put new code on the Circuit Playground Express you just copy a file in the correct format from your computer using a USB connection without having to install any extra software. This is because it comes with a "bootloader" calld UF2 already installed that lets to do the flashing. Here is more information about the [UF2 bootloader](https://github.com/Microsoft/uf2) if you are interested.
+Gopherbot uses an [Adafruit Circuit Playground Express](https://www.adafruit.com/product/3333) as its "brain". To put new code on the Circuit Playground Express you just copy a file in the correct format from your computer using a USB connection without having to install any extra flashing software. This is because it comes with a "bootloader" named UF2 already installed, that lets to do the flashing. Here is more information about the [UF2 bootloader](https://github.com/Microsoft/uf2) if you are interested.
 
-Here is all you have to do:
+Here is what to do:
 
 - Plug your Circuit Playground Express into your computer's USB port.
 - Press the "RESET" button on the board two times to get the Circuit Playground Express board ready to receive code. You have to do this every time you want to put new code on to the board.
@@ -73,6 +75,8 @@ Now THAT is a blink!
 
 ## What To Do Next?
 
-If you want to load one of the example programs on Gopherbot, check out our [examples](./examples/README.md).
+If you want to load one of the example programs on Gopherbot, check out our [examples located here](./examples/README.md).
 
-For a series of programming activities to learn TinyGo using Gopherbot, check out the [learn folder](./learn/README.md).
+For a series of activities to learn programming TinyGo using Gopherbot, check out the [learn folder](./learn/README.md).
+
+Have fun!
