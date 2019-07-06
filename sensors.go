@@ -42,3 +42,20 @@ func Thermometer() *ThermometerDevice {
 		Device: s,
 	}
 }
+
+// LightMeterDevice controls the Gopherbot built-in photoresistor.
+type LightMeterDevice struct {
+	machine.ADC
+}
+
+// LightMeter returns the LightMeterDevice.
+func LightMeter() *LightMeterDevice {
+	EnsureADCInit()
+
+	p := machine.ADC{machine.LIGHTSENSOR}
+	p.Configure()
+
+	return &LightMeterDevice{
+		ADC: p,
+	}
+}
