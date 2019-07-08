@@ -1,7 +1,7 @@
 // Package gopherbot is the TinyGo code for the Gopherbot programmable robotic plushie.
 package gopherbot
 
-import "github.com/tinygo-org/tinygo/src/machine"
+import "machine"
 
 const (
 	// BackpackLEDCount is how many WS2812 LEDs are on the backpack, aka
