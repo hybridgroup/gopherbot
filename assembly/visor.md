@@ -24,27 +24,39 @@ Do not cut the black or white wires.
 
 ## Attach RGB LED Strip 3-pin connector to ribbon cable
 
-![Kit](./images/visor/crimp-ribbon-cable.png)
-
 Take the ribbon cable and separate the last 3cm of the uncut end.
 
+![Kit](./images/visor/trim-rgb-wires.png)
+
 Trim off the exposed wire tips on the ends of the RGB LED's 3 wire connector.
+
+![Kit](./images/visor/crimp-ribbon-rgb.png)
 
 Crimp the red wire on the 3-pin connector to the red wire on the ribbon cable's uncut side using the solderless connector with your pliers.
 
 Crimp the white wire on the 3-pin connector to the white wire on the ribbon cable's uncut side using the solderless connector with your pliers.
 
+![Kit](./images/visor/crimp-ribbon-rgb3.png)
+
 Crimp the yellow wire on the 3-pin connector to the green wire on the ribbon cable's uncut side using the solderless connector with your pliers.
 
 ## Crimp spade fork terminals to cut end of ribbon cable
 
+![Kit](./images/visor/strip-ribbon-cable.png)
+
 Use your wire strippers to strip off the insulation of the last 7mm of each of the wires on the cut end of the ribbon cable, leaving the bare wires exposed.
 
+![Kit](./images/visor/crimp-ribbon-fork.png)
+
 Crimp one of the fork terminals to the red wire on the ribbon cable's cut side with your crimpers. Make sure to push the wire all the way thru the fork terminal so that the bare wire is sticking thru slightly.
+
+![Kit](./images/visor/crimp-ribbon-green.png)
 
 Crimp one of the fork terminals to the green wire on the ribbon cable's cut side with your crimpers.
 
 Crimp one of the fork terminals to the blue wire on the ribbon cable's cut side with your crimpers.
+
+![Kit](./images/visor/crimp-ribbon-ground.png)
 
 Crimp both the white and black terminals using the last fork terminal.
 
@@ -53,6 +65,8 @@ Crimp both the white and black terminals using the last fork terminal.
 Attach ribbon cable to Circuit Playground Express using the fork connectors.
 
 Take 2 of the 6mm machine screws and 2 of the M3 nuts.
+
+![Kit](./images/visor/connect-cpe-fork1.png)
 
 Connect the green wire's fork connector to the back side of the Circuit Playground Express "A3" terminal using the 6mm machine screw and one of the M3 nuts.
 
@@ -64,7 +78,11 @@ Attach ribbon cable to Circuit Playground Express using the fork connectors.
 
 Take 2 of the 6mm machine screws and 2 of the M3 nuts.
 
+![Kit](./images/visor/connect-cpe-fork2.png)
+
 Connect the red wire's fork connector to the back side of the Circuit Playground Express "3.3V" terminal using the 10mm machine screw and one of the M3 nuts.
+
+![Kit](./images/visor/connect-cpe-fork3.png)
 
 Connect the white and black wire's fork connector to the back side of the Circuit Playground Express "GND" terminal using the 10mm machine screw and one of the M3 nuts.
 
@@ -74,17 +92,23 @@ Run a test program to make sure that the LEDs are wired correctly by plugging in
 
 ## Place gel strip inside visor
 
+![Kit](./images/visor/place-gel-strip.png)
+
 Peel off the protective coating from the small gel strip, and then place the gel strip inside the helmet into the small space inside the visor. You might need to use a small scissors to trim the edges so it can fit.
 
 ## Place LEDs inside visor
 
-Place the LEDs on top of the gel strip from inside the helmet in the small space inside the visor.
+![Kit](./images/visor/place-rgb-led.png)
+
+Place the RGB LED strip on top of the gel strip from inside the helmet in the small space inside the visor.
 
 ## Tape down the LEDs/gel strip
 
-Carefully use the tape to tape down the LEDs/gel strip to the inside of the helmet.
+Carefully use the tape to finish taping down the LEDs/gel strip to the inside of the helmet.
 
 ## Route the wires around the inside of the helmet
+
+![Kit](./images/visor/route-wires.png)
 
 Route the wires around the inside of the helmet, but do not attach them to anything yet.
 

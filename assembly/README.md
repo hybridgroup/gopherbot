@@ -14,6 +14,10 @@ There are several items you will need that are not included in the Gopherbot kit
 
 #### 5V USB Battery
 
+![Tools](./images/tools/battery.png)
+
+Your basic 5V rechargable battery.
+
 #### Black electrical tape
 
 ![Tools](./images/tools/tape.png)
