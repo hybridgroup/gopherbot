@@ -83,4 +83,4 @@ Gel strip for visor
 ![Kit](./images/kit/elastic.png)
 
 ### Tie Wraps
-![Kit](./images/kit/tie-wraps.png)
+![Kit](./images/kit/tie-wrap.png)
