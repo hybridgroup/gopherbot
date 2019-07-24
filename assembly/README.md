@@ -12,10 +12,29 @@ Start by verifying that you have all your parts. Take a look at the list of [kit
 
 There are several items you will need that are not included in the Gopherbot kit:
 
-- 5V USB Battery
-- Small piece of black duct tape (approx 40mm wide and 100mm in length). You can also use black electrical tape.
-- Normal size pliers or crimpers
-- Small Phillips head screwdriver
+#### 5V USB Battery
+
+#### Black electrical tape
+
+![Tools](./images/tools/tape.png)
+
+Black electrical tape (approx 40mm wide and 100mm in length). You can also use black duct tape.
+
+#### Wire cutter/stripper
+
+![Tools](./images/tools/cutter.png)
+
+#### Wire crimper
+
+![Tools](./images/tools/crimper.png)
+
+#### Scissors
+
+![Tools](./images/tools/scissors.png)
+
+#### Small Phillips head screwdriver
+
+![Tools](./images/tools/screwdriver.png)
 
 ## Assembly
 
