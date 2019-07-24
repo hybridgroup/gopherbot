@@ -49,3 +49,5 @@ Attach the USB battery to the backpack by using the bottom elastic straps. Make 
 ## Next steps
 
 Plug in the battery. Your Gopherbot should light up. You are ready to play!
+
+Now that your Gopherbot is fully assembled, go back to the main [README](../README.md) and perform the software installation on your computer so you can write your own programs.
