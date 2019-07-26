@@ -26,14 +26,6 @@ Pass the end of the first shorter elastic strap thru both bottom holes on one si
 
 Pass the end of the second shorter elastic strap thru both bottom holes on one side of the backpack. Tie an overhand knot on each end and tie the two ends together.
 
-## Attach Circuit Playground Express to backpack
-
-![Kit](./images/backpack/attach-cpe.png)
-
-Finish attaching the Circuit Playground Express to backpack using four 10mm machine screws, four M3 washers, and four M3 nuts.
-
-Pass one 10mm machine screw thru the front, slipping a washer in between the back of the board and the backpack standoff.
-
 ## Put the helmet and backpack on plushie
 
 ![Kit](./images/backpack/add-backpack.png)
