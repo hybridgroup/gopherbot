@@ -64,7 +64,7 @@ Here are the [ears and cables assembly instructions](./ears-cables.md).
 
 Now it is time to assemble the 3D printed backpack.
 
-Here are the [backpack assembly instructions](.backpack.md).
+Here are the [backpack assembly instructions](./backpack.md).
 
 ### Putting on the helmet and backpack
 
