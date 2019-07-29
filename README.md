@@ -112,7 +112,7 @@ Now THAT is a blink!
 
 ## What To Do Next?
 
-If you want to load one of the example programs on Gopherbot, check out our [examples located here](./examples/README.md).
+If you want to load one of the example programs on Gopherbot, check out our [examples located here](./examples).
 
 For a series of activities to learn programming TinyGo using Gopherbot, check out the [learn folder](./learn/README.md).
 
