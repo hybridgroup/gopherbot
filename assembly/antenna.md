@@ -54,7 +54,7 @@ Use your wire strippers to strip off the insulation of the last 7mm of the blue 
 
 Crimp one of male bayonet terminals to the black wire on the ribbon cable with your crimpers. Make sure to push the wire into the bayonet terminal so that the bare wire is sticking thru slightly, but not all the way thru.
 
-Crimp one of male bayonet terminals to the green wire on the ribbon cable with your crimpers, in the same way that you crimped the black wire.
+Crimp one of male bayonet terminals to the blue wire on the ribbon cable with your crimpers, in the same way that you crimped the black wire.
 
 ## Plug male bayonet connectors into female bayonet connectors
 
