@@ -22,9 +22,11 @@ Cut the last 3 cm off of the red wire.
 
 Do not cut the black or white wires.
 
+_Note: The unevenly-cut ends of the ribbon cable will be connected to the circuitboard. The even ends will be crimped to the LED wires._
+
 ## Attach RGB LED Strip 3-pin connector to ribbon cable
 
-Take the ribbon cable and separate the last 3cm of the uncut end.
+Take the ribbon cable and separate the last 3cm of the uncut (even) ends.
 
 ![Kit](./images/visor/trim-rgb-wires.png)
 
@@ -109,6 +111,8 @@ Run a test program to make sure that the LEDs are wired correctly by plugging in
 ![Kit](./images/visor/place-gel-strip.png)
 
 Peel off the protective coating from the small gel strip, and then place the gel strip inside the helmet into the small space inside the visor. You might need to use a small scissors to trim the edges so it can fit.
+
+_Note: If you received a kit the gel strip may be taped to the lid of the box._
 
 ## Place LEDs inside visor
 
