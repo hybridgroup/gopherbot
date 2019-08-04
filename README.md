@@ -47,6 +47,10 @@ Did you receive a Gopherbot kit? Awesome! For assembly instructions, go here:
 
 [Gopherbot Assembly Instructions](./assembly/README.md)
 
+The 3D designs for the helmet, ears, and backpack are created by Damen Evans under the Creative Commons - Attribution - Non-Commercial license. The files are located here:
+
+https://www.thingiverse.com/thing:3761937
+
 ## Installation
 
 To put code on Gopherbot, you need to install some software on your own machine.
