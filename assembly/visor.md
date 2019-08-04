@@ -74,16 +74,6 @@ Connect the green wire's fork connector to the back side of the Circuit Playgrou
 
 Connect the blue wire's fork connector to the back side of the Circuit Playground Express "A2" terminal using the 6mm machine screw and one of the M3 nuts.
 
-## Attach Circuit Playground Express to backpack
-
-![Kit](./images/backpack/attach-cpe.png)
-
-Attach the Circuit Playground Express to backpack using four 10mm machine screws, four M3 washers, and four M3 nuts.
-
-Pass one 10mm machine screw thru the front of the circuit board, put a washer on the screw on the back of the board then place the Circuit Playground Express on the backpack.
-
-Screw the nuts loosely on the back of the machine screws just enough so they do not fall off. They will be tightened down in an upcoming step.
-
 ## Attach ribbon cable red and black/white wires to Circuit Playground Express and backpack
 
 Attach ribbon cable to Circuit Playground Express using the fork connectors.
@@ -97,10 +87,6 @@ Connect the red wire's fork connector to the back side of the Circuit Playground
 ![Kit](./images/visor/connect-cpe-fork3.png)
 
 Connect the white and black wire's fork connector to the back side of the Circuit Playground Express "GND" terminal using the 10mm machine screw and one of the M3 nuts.
-
-## Finish attaching Circuit Playground Express to Backpack
-
-Now tighten down the rest of the screws that hold the Circuit Playground Express to Backpack.
 
 ## Test the RGB LED strip
 

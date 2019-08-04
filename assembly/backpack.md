@@ -26,6 +26,22 @@ Pass the end of the first shorter elastic strap thru both bottom holes on one si
 
 Pass the end of the second shorter elastic strap thru both bottom holes on one side of the backpack. Tie an overhand knot on each end and tie the two ends together.
 
+## Attach Circuit Playground Express to backpack
+
+![Kit](./images/backpack/attach-cpe.png)
+
+Finish attaching the Circuit Playground Express to backpack using four 10mm machine screws, four M3 washers, and four M3 nuts.
+
+Slip a washer between the back of the board and the standoff, then pass one 10mm machine screw thru the front of the circuit board.
+
+Screw a nut loosely on the back of the machine screw just enough so it does not fall off. It will be tightened down in an upcoming step.
+
+Now attach the remaining machine screws, washers, and nuts, in the same way that you did the first one.
+
+Once all four screws are in place, you can tighten them completely.
+
+The idea is that since there are 2 fork terminals that are connected between the back of the Circuit Playground Express and the standoffs on the backpack, we need the 4 washers to act as spacers so that the Circuit Playground Express board sits evenly on all 6 of the standoffs.
+
 ## Put the helmet and backpack on plushie
 
 ![Kit](./images/backpack/add-backpack.png)
