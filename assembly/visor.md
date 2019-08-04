@@ -90,7 +90,7 @@ Connect the white and black wire's fork connector to the back side of the Circui
 
 ## Test the RGB LED strip
 
-Run a test program to make sure that the LEDs are wired correctly by plugging in the Circuit Playground Express to a battery or your computer's USB port. If the RGB LED strip does not light up, it might be due to a mis-aligned "+" connector inside the plastic housing. For information on how to correct this, [click here]().
+Run the pre-loaded test program to make sure that the LEDs are wired correctly by plugging in the Circuit Playground Express to a battery or your computer's USB port. If the RGB LED strip does not light up, it might be due to a mis-aligned "+" connector inside the plastic housing. For information on how to correct this, [click here](./rgb-led.md).
 
 ## Place gel strip inside visor
 
