@@ -6,7 +6,7 @@ Here are a series of activities to learn about TinyGo by using Gopherbot.
 
 If you have not done it yet, follow the installation instructions here:
 
-LINK
+https://github.com/hybridgroup/gopherbot#installation
 
 ## Code
 
@@ -17,44 +17,84 @@ LINK
 This tests that you can compile and flash your Gopherbot with TinyGo code, by blinking the built-in LED.
 
 - Plug your Circuit Playground Express into your computer's USB port.
-- Press the "RESET" button on the board two times to get the Circuit Playground Express board ready to receive code. You have to do this every time you want to put new code on to the board.
-- The Circuit Playground Express board will appear to your computer like a USB drive. Determine the path to the board, for example on Linux it will be something like `/media/[USERNAME]/[NAME OF THE BOARD]`.
 - Build your TinyGo program to the board in `.uf2` format using this command:
 
 ```shell
-tinygo build -size short -o /media/yourname/CPLAYBOOT/flash.uf2 -target=circuitplay-express ./learn/step0/main.go
+tinygo flash -target=circuitplay-express ./learn/step0/main.go
 ```
 
 - The Circuit Playground Express board should restart and then begin running your program. This program just causes the small LED labelled "D13" on the Circuit Playground Express board to start blinking on and off.
 
 ### step1.go - LED, Button A
 
-![Gopherbot](./images/step1.png)
+Now, instead of just using the low-level TinyGo functions, we are going to use the more advanced "Gopherbot" API to program our furrie robotic friend. Gopherbot has more pre-defined behaviors, but of course all of these are built on top of the lower-level TinyGo "machine" API.
 
-### step2.go - LED, Button A, Antenna LED, Button B
+First thing we are going to do is to program the left button on the backpack. Let's make it so when the button is pressed, the small built-in LED on the board turns on. Also, write the code so that when the button is released that the LED turns off.
+
+```shell
+tinygo flash -target=circuitplay-express ./learn/step1/main.go
+```
+
+### step2.go - LED, Button A, Button B
 
 ![Gopherbot](./images/step2.png)
 
-### step3.go - LED, Button A, Antenna LED, Button B, Backpack LEDs
+```shell
+tinygo flash -target=circuitplay-express ./learn/step2/main.go
+```
+
+### step3.go - LED, Button A, Button B, Backpack LEDs
 
 ![Gopherbot](./images/step3.png)
 
-### step4.go - LED, Button A, Antenna LED, Button B, Backpack LEDs, Sider switch
+```shell
+tinygo flash -target=circuitplay-express ./learn/step3/main.go
+```
+
+### step4.go - LED, Button A, Button B, Backpack LEDs, Slider switch
 
 ![Gopherbot](./images/step4.png)
 
-### step5.go - LED, Button A, Antenna LED, Button B, Backpack LEDs, Sider switch, Visor LEDs
+```shell
+tinygo flash -target=circuitplay-express ./learn/step4/main.go
+```
+
+### step5.go - LED, Button A, Button B, Backpack LEDs, Slider switch, Antenna LED
 
 ![Gopherbot](./images/step5.png)
 
-### step6.go - LED, Button A, Antenna LED, Button B, Backpack LEDs, Sider switch, Thermistor
+```shell
+tinygo flash -target=circuitplay-express ./learn/step5/main.go
+```
+
+### step6.go - LED, Button A, Button B, Backpack LEDs, Slider switch, Antenna LED, Visor LEDs
 
 ![Gopherbot](./images/step6.png)
 
-### step7.go - LED, Button A, Antenna LED, Button B, Backpack LEDs, Sider switch, Thermistor, Accelerometer
+```shell
+tinygo flash -target=circuitplay-express ./learn/step6/main.go
+```
+
+### step7.go - LED, Button A, Button B, Backpack LEDs, Slider switch, Antenna LED, Visor LEDs, Thermistor
 
 ![Gopherbot](./images/step7.png)
 
-### step8.go - LED, Button A, Antenna LED, Button B, Backpack LEDs, Sider switch, Thermistor, Accelerometer, Buzzer
+```shell
+tinygo flash -target=circuitplay-express ./learn/step7/main.go
+```
+
+### step8.go - LED, Button A, Button B, Backpack LEDs, Slider switch, Antenna LED, Visor LEDs, Thermistor, Accelerometer
 
 ![Gopherbot](./images/step8.png)
+
+```shell
+tinygo flash -target=circuitplay-express ./learn/step8/main.go
+```
+
+### step9.go - LED, Button A, Button B, Backpack LEDs, Slider switch, Antenna LED, Visor LEDs, Thermistor, Accelerometer, Buzzer
+
+![Gopherbot](./images/step9.png)
+
+```shell
+tinygo flash -target=circuitplay-express ./learn/step9/main.go
+```
