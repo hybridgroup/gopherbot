@@ -92,6 +92,8 @@ Similarly to the `Backpack` does, the `Visor` has several built-in functions for
 
 We will also use the buttons to select which of the `Visor` colors to display. Pushing the right or left button will scroll thru these three color presets at the same time that it chooses the presets for the `Backpack`.
 
+One difference will be that we will program Gopherbot so that the `Visor` stays on regardless of state of the `Slider` switch.
+
 ![Gopherbot](./images/step6.png)
 
 ```shell
@@ -99,6 +101,10 @@ tinygo flash -target=circuitplay-express ./learn/step6/main.go
 ```
 
 ### step7.go - LED, Button A, Button B, Backpack LEDs, Slider switch, Antenna LED, Visor LEDs, Thermistor
+
+Now that we have all the LEDs working all at the same time, let's explore one of the sensors that is built-in. The Circuit Playground Express board has an onboard `Thermometer` which is actually a kind of analog temperature sensor known as a thermistor.
+
+We will add to our program an additional `mode` which will read the current temperature, and then modify the `Visor` depending on the reading from the `Thermometer`.
 
 ![Gopherbot](./images/step7.png)
 
@@ -108,6 +114,10 @@ tinygo flash -target=circuitplay-express ./learn/step7/main.go
 
 ### step8.go - LED, Button A, Button B, Backpack LEDs, Slider switch, Antenna LED, Visor LEDs, Thermistor, Accelerometer
 
+Let try another of the built-in sensors on the Circuit Playground Express board. It has an onboard `Accelerometer` which is a sensor that can detect motion on any of 3 different axes.
+
+We will add to our program another `mode` which will read the `Accelerometer`, and then based on the tilt position of the Gopherbot, modify the `Visor` to make it act like a "level".
+
 ![Gopherbot](./images/step8.png)
 
 ```shell
@@ -115,6 +125,8 @@ tinygo flash -target=circuitplay-express ./learn/step8/main.go
 ```
 
 ### step9.go - LED, Button A, Button B, Backpack LEDs, Slider switch, Antenna LED, Visor LEDs, Thermistor, Accelerometer, Buzzer
+
+Out final modification to the program will add the built-in `Speaker` to make a bleeping sound when the `tilt()` function detects that the Gopherbot is laying entirely on its side.
 
 ![Gopherbot](./images/step9.png)
 
