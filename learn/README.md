@@ -2,6 +2,8 @@
 
 Here are a series of activities to learn about TinyGo by using Gopherbot.
 
+[![GoDoc](https://godoc.org/github.com/hybridgroup/gopherbot?status.svg)](https://godoc.org/github.com/hybridgroup/gopherbot)
+
 ## Installation
 
 If you have not done it yet, follow the installation instructions here:
@@ -29,13 +31,18 @@ tinygo flash -target=circuitplay-express ./learn/step0/main.go
 
 Now, instead of just using the low-level TinyGo functions, we are going to use the more advanced "Gopherbot" API to program our furrie robotic friend. Gopherbot has more pre-defined behaviors, but of course all of these are built on top of the lower-level TinyGo "machine" API.
 
-First thing we are going to do is to program the left button on the backpack. Let's make it so when the button is pressed, the small built-in LED on the board turns on. Also, write the code so that when the button is released that the LED turns off.
+Want to see complete documentation of the Gopherbot API? Check out our GoDocs here at:
+https://godoc.org/github.com/hybridgroup/gopherbot
+
+First thing we are going to do is to program the left button on the backpack. Let's make it so when the button is pressed, the small built-in LED on the board turns on. Also, the code will make it so that when the button is released that the LED turns off.
 
 ```shell
 tinygo flash -target=circuitplay-express ./learn/step1/main.go
 ```
 
 ### step2.go - LED, Button A, Button B
+
+Next, let's do the same thing for the right button that we did for the left one. When the button is pressed, the small built-in LED on the board turns on. Also, the code will make it so that when the button is released that the LED turns off.
 
 ![Gopherbot](./images/step2.png)
 
@@ -45,6 +52,12 @@ tinygo flash -target=circuitplay-express ./learn/step2/main.go
 
 ### step3.go - LED, Button A, Button B, Backpack LEDs
 
+Now we will get brightly colored, by adding the ring of Red Green Blue (RGB) LEDs that are on the Circuit Playground Express board on the `Backpack`.
+
+The Gopherbot `Backpack` has several built-in functions for these LEDs to set colors and patterns. We will add three of these color settings to the program.
+
+We will also use the buttons to select which of the `Backpack` colors to display. Pushing the right or left button will scroll thru these three color presets.
+
 ![Gopherbot](./images/step3.png)
 
 ```shell
@@ -52,6 +65,8 @@ tinygo flash -target=circuitplay-express ./learn/step3/main.go
 ```
 
 ### step4.go - LED, Button A, Button B, Backpack LEDs, Slider switch
+
+The RGB LEDs are really bright! Let's add the ability to turn them on and off using the built-in slider switch.
 
 ![Gopherbot](./images/step4.png)
 
@@ -61,6 +76,8 @@ tinygo flash -target=circuitplay-express ./learn/step4/main.go
 
 ### step5.go - LED, Button A, Button B, Backpack LEDs, Slider switch, Antenna LED
 
+Now we need to get the LED on the end of the `Antenna` blinking. We can do this so that it automatically blinks over and over by using a goroutine to call the `Antenna.Blink()` function.
+
 ![Gopherbot](./images/step5.png)
 
 ```shell
@@ -68,6 +85,12 @@ tinygo flash -target=circuitplay-express ./learn/step5/main.go
 ```
 
 ### step6.go - LED, Button A, Button B, Backpack LEDs, Slider switch, Antenna LED, Visor LEDs
+
+Time to fully activate Gopherbot by controlling the RGB LEDs that are in the helmet's `Visor`.
+
+Similarly to the `Backpack` does, the `Visor` has several built-in functions for the LEDs to set colors and patterns. We will add three of these color settings to the program.
+
+We will also use the buttons to select which of the `Visor` colors to display. Pushing the right or left button will scroll thru these three color presets at the same time that it chooses the presets for the `Backpack`.
 
 ![Gopherbot](./images/step6.png)
 

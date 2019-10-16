@@ -2,6 +2,8 @@
 
 Gopherbot is a robot gopher plushie that is programmable using TinyGo (https://tinygo.org)
 
+[![GoDoc](https://godoc.org/github.com/hybridgroup/gopherbot?status.svg)](https://godoc.org/github.com/hybridgroup/gopherbot)
+
 Uses an [Adafruit Circuit Playground Express](https://www.adafruit.com/product/3333) with a 3D printed helmet and backpack.
 
 Here is a TinyGo program that blinks all of the various built-in LEDs all at the same time when the slider switch is in the "on" position.
@@ -55,9 +57,9 @@ https://www.thingiverse.com/thing:3761937
 
 To put code on Gopherbot, you need to install some software on your own machine.
 
-### Go 1.12
+### Go 1.13
 
-If you have not installed Go 1.12 on your computer already, you can download it here:
+If you have not installed Go 1.13 on your computer already, you can download it here:
 
 https://golang.org/dl/
 
@@ -93,23 +95,20 @@ Gopherbot uses an [Adafruit Circuit Playground Express](https://www.adafruit.com
 Here is what to do:
 
 - Plug your Circuit Playground Express into your computer's USB port.
-- Press the "RESET" button on the board two times to get the Circuit Playground Express board ready to receive code. You have to do this every time you want to put new code on to the board.
-- The Circuit Playground Express board will appear to your computer like a USB drive. Determine the path to the board, for example on Linux it will be something like `/media/[USERNAME]/[NAME OF THE BOARD]`.
-- Build your TinyGo program to the board in `.uf2` format using this command:
+- Build and flash your TinyGo program to the board in `.uf2` format using this command:
 
 ```shell
-tinygo build -size short -o /media/yourname/CPLAYBOOT/flash.uf2 -target=circuitplay-express examples/blinky1
+tinygo flash -target=circuitplay-express examples/blinky1
 ```
 
 - The Circuit Playground Express board should restart and then begin running your program. This program just causes the small LED labelled "D13" on the Circuit Playground Express board to start blinking on and off.
 
 Now you are ready to try something a little more flashy.
 
-- Once again, press the "RESET" button on the board two times to get the Circuit Playground Express board ready to receive code.
-- Build the demo TinyGo program to the board in format using this command:
+- Build and flash the demo TinyGo program to the board using this command:
 
 ```shell
-tinygo build -size short -o /media/yourname/CPLAYBOOT/flash.uf2 -target=circuitplay-express ./examples/blink/main.go
+tinygo flash -target=circuitplay-express ./examples/blink/main.go
 ```
 
 Now THAT is a blink!

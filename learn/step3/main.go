@@ -11,7 +11,6 @@ const (
 	greenJet = iota
 	redJet
 	redRotate
-	xmasJet
 )
 
 const (
@@ -35,14 +34,14 @@ func main() {
 			statusOn = true
 			mode--
 			if mode < greenJet {
-				mode = xmasJet
+				mode = redRotate
 			}
 		}
 
 		if right.Pushed() {
 			statusOn = true
 			mode++
-			if mode > xmasJet {
+			if mode > redRotate {
 				mode = greenJet
 			}
 		}
@@ -60,8 +59,6 @@ func main() {
 			backpack.Red()
 		case redRotate:
 			backpack.Alternate(color.RGBA{R: 0xff, G: 0x00, B: 0x00}, color.RGBA{R: 0x00, G: 0x00, B: 0x00})
-		case xmasJet:
-			backpack.Xmas()
 		}
 
 		time.Sleep(100 * time.Millisecond)
