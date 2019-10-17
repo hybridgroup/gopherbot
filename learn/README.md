@@ -14,8 +14,6 @@ https://github.com/hybridgroup/gopherbot#installation
 
 ### step0.go - Built-in LED
 
-![Gopherbot](./images/step0.png)
-
 This tests that you can compile and flash your Gopherbot with TinyGo code, by blinking the built-in LED.
 
 - Plug your Circuit Playground Express into your computer's USB port.
@@ -44,8 +42,6 @@ tinygo flash -target=circuitplay-express ./learn/step1/main.go
 
 Next, let's do the same thing for the right button that we did for the left one. When the button is pressed, the small built-in LED on the board turns on. Also, the code will make it so that when the button is released that the LED turns off.
 
-![Gopherbot](./images/step2.png)
-
 ```shell
 tinygo flash -target=circuitplay-express ./learn/step2/main.go
 ```
@@ -58,8 +54,6 @@ The Gopherbot `Backpack` has several built-in functions for these LEDs to set co
 
 We will also use the buttons to select which of the `Backpack` colors to display. Pushing the right or left button will scroll thru these three color presets.
 
-![Gopherbot](./images/step3.png)
-
 ```shell
 tinygo flash -target=circuitplay-express ./learn/step3/main.go
 ```
@@ -68,8 +62,6 @@ tinygo flash -target=circuitplay-express ./learn/step3/main.go
 
 The RGB LEDs are really bright! Let's add the ability to turn them on and off using the built-in slider switch.
 
-![Gopherbot](./images/step4.png)
-
 ```shell
 tinygo flash -target=circuitplay-express ./learn/step4/main.go
 ```
@@ -77,8 +69,6 @@ tinygo flash -target=circuitplay-express ./learn/step4/main.go
 ### step5.go - LED, Button A, Button B, Backpack LEDs, Slider switch, Antenna LED
 
 Now we need to get the LED on the end of the `Antenna` blinking. We can do this so that it automatically blinks over and over by using a goroutine to call the `Antenna.Blink()` function.
-
-![Gopherbot](./images/step5.png)
 
 ```shell
 tinygo flash -target=circuitplay-express ./learn/step5/main.go
@@ -94,8 +84,6 @@ We will also use the buttons to select which of the `Visor` colors to display. P
 
 One difference will be that we will program Gopherbot so that the `Visor` stays on regardless of state of the `Slider` switch.
 
-![Gopherbot](./images/step6.png)
-
 ```shell
 tinygo flash -target=circuitplay-express ./learn/step6/main.go
 ```
@@ -105,8 +93,6 @@ tinygo flash -target=circuitplay-express ./learn/step6/main.go
 Now that we have all the LEDs working all at the same time, let's explore one of the sensors that is built-in. The Circuit Playground Express board has an onboard `Thermometer` which is actually a kind of analog temperature sensor known as a thermistor.
 
 We will add to our program an additional `mode` which will read the current temperature, and then modify the `Visor` depending on the reading from the `Thermometer`.
-
-![Gopherbot](./images/step7.png)
 
 ```shell
 tinygo flash -target=circuitplay-express ./learn/step7/main.go
@@ -118,8 +104,6 @@ Let try another of the built-in sensors on the Circuit Playground Express board.
 
 We will add to our program another `mode` which will read the `Accelerometer`, and then based on the tilt position of the Gopherbot, modify the `Visor` to make it act like a "level".
 
-![Gopherbot](./images/step8.png)
-
 ```shell
 tinygo flash -target=circuitplay-express ./learn/step8/main.go
 ```
@@ -127,8 +111,6 @@ tinygo flash -target=circuitplay-express ./learn/step8/main.go
 ### step9.go - LED, Button A, Button B, Backpack LEDs, Slider switch, Antenna LED, Visor LEDs, Thermistor, Accelerometer, Buzzer
 
 Out final modification to the program will add the built-in `Speaker` to make a bleeping sound when the `tilt()` function detects that the Gopherbot is laying entirely on its side.
-
-![Gopherbot](./images/step9.png)
 
 ```shell
 tinygo flash -target=circuitplay-express ./learn/step9/main.go
