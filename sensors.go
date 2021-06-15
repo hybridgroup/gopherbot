@@ -53,7 +53,7 @@ func LightMeter() *LightMeterDevice {
 	EnsureADCInit()
 
 	p := machine.ADC{machine.LIGHTSENSOR}
-	p.Configure()
+	p.Configure(machine.ADCConfig{})
 
 	return &LightMeterDevice{
 		ADC: p,
