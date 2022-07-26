@@ -57,9 +57,9 @@ https://www.thingiverse.com/thing:3761937
 
 To put code on Gopherbot, you need to install some software on your own machine.
 
-### Go 1.13
+### Go 1.18
 
-If you have not installed Go 1.13 on your computer already, you can download it here:
+If you have not installed Go 1.18 on your computer already, you can download it here:
 
 https://golang.org/dl/
 
@@ -68,14 +68,6 @@ https://golang.org/dl/
 Follow the instructions here to install TinyGo:
 
 https://tinygo.org/getting-started/
-
-### TinyGo drivers
-
-To install the various drivers and other code dependencies run this command:
-
-```
-go get -u tinygo.org/x/drivers
-```
 
 ### Gopherbot code
 
@@ -98,7 +90,7 @@ Here is what to do:
 - Build and flash your TinyGo program to the board in `.uf2` format using this command:
 
 ```shell
-tinygo flash -target=circuitplay-express examples/blinky1
+tinygo flash -target=gopherbot examples/blinky1
 ```
 
 - The Circuit Playground Express board should restart and then begin running your program. This program just causes the small LED labelled "D13" on the Circuit Playground Express board to start blinking on and off.
@@ -108,7 +100,7 @@ Now you are ready to try something a little more flashy.
 - Build and flash the demo TinyGo program to the board using this command:
 
 ```shell
-tinygo flash -target=circuitplay-express ./examples/blink/main.go
+tinygo flash -target=circuitplay-express ./examples/blink/
 ```
 
 Now THAT is a blink!
@@ -120,3 +112,13 @@ If you want to load one of the example programs on Gopherbot, check out our [exa
 For a series of activities to learn programming TinyGo using Gopherbot, check out the [learn folder](./learn/README.md).
 
 Have fun!
+
+## Gopherbot 2
+
+The Gopherbot 2 is the same as the Gopherbot but uses a Circuit Playground Bluefruit board, which has a Nordic Semiconductors nrf52840 processor with built-in Bluetooth radio.
+
+To flash code on the Gopherbot 2, use the same commands but with the `target=gopherbot2`.
+
+```shell
+tinygo flash -target=gopherbot2 ./examples/blink/
+```
