@@ -108,7 +108,7 @@ Now you are ready to try something a little more flashy.
 - Build and flash the demo TinyGo program to the board using this command:
 
 ```shell
-tinygo flash -target=circuitplay-express ./examples/blink/main.go
+tinygo flash -target=circuitplay-express ./examples/blink-all/main.go
 ```
 
 Now THAT is a blink!
