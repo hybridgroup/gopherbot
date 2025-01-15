@@ -61,18 +61,34 @@ func main() {
 		switch mode {
 		case greenVisor:
 			visor.Green()
-			backpack.Alternate(color.RGBA{R: 0x00, G: 0xff, B: 0x00}, color.RGBA{R: 0x00, G: 0x00, B: 0xff})
+			if gopherbot.Slider().IsOn() {
+				backpack.Alternate(color.RGBA{R: 0x00, G: 0xff, B: 0x00}, color.RGBA{R: 0x00, G: 0x00, B: 0xff})
+			} else {
+				backpack.Off()
+			}
 		case redVisor:
 			visor.Red()
-			backpack.Red()
+			if gopherbot.Slider().IsOn() {
+				backpack.Red()
+			} else {
+				backpack.Off()
+			}
 		case cylonVisor:
 			visor.Cylon()
-			backpack.Alternate(color.RGBA{R: 0xff, G: 0x00, B: 0x00}, color.RGBA{R: 0x00, G: 0x00, B: 0x00})
+			if gopherbot.Slider().IsOn() {
+				backpack.Alternate(color.RGBA{R: 0xff, G: 0x00, B: 0x00}, color.RGBA{R: 0x00, G: 0x00, B: 0x00})
+			} else {
+				backpack.Off()
+			}
 		case tiltVisor:
 			tilt()
 		case xmasVisor:
 			visor.Xmas()
-			backpack.Xmas()
+			if gopherbot.Slider().IsOn() {
+				backpack.Xmas()
+			} else {
+				backpack.Off()
+			}
 		}
 
 		time.Sleep(200 * time.Millisecond)
